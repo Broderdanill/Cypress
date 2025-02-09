@@ -1,0 +1,43 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Detta triggar pipelinen när du gör en push till main-branchen
+  pull_request:
+    branches:
+      - main  # Det triggas när en pull request görs mot main-branchen
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Kör jobbet på en senaste version av Ubuntu
+
+    steps:
+      # Steg 1: Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Steg 2: Installera Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Ange Node.js version (använd den version du arbetar med)
+
+      # Steg 3: Installera beroenden
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Steg 4: Kör Cypress tester
+      - name: Run Cypress tests
+        run: |
+          npm run cypress:run  # Eller kommandot du använder för att köra Cypress-tester
+
+      # Steg 5: Lägg till, commita och pusha ändringar om testerna gick igenom
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Automated commit after successful tests"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Använd GitHub's inbyggda token för att göra pushen
