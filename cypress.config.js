@@ -3,8 +3,10 @@
 module.exports = {
   e2e: {
     experimentalRecordApi: true, // Aktivera inspelning av tester
-    setupNodeEvents(on, config) {
-      // Eventuella andra inställningar eller hooks
-    }
-  }
-}
+    screenshotOnRunFailure: true,
+    video: true,
+    videosFolder: 'cypress/videos',
+    screenshotsFolder: 'cypress/screenshots',
+    reportFolder: 'cypress/results',
+  },
+};

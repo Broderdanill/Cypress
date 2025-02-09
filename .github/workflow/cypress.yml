@@ -1,0 +1,44 @@
+name: Cypress Test Suite
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests locally (no recording)
+        run: npx cypress run
+
+      - name: Commit and push test files if changed
+        run: |
+          git config --global user.name "your_username"
+          git config --global user.email "your_email@example.com"
+          git add cypress/e2e/*.spec.js
+          git diff --quiet || git commit -m "Update Cypress test cases"
+          git push origin main
+
+      - name: Commit and push test results to GitHub (if needed)
+        run: |
+          git add cypress/results/
+          git diff --quiet || git commit -m "Update Cypress test results"
+          git push origin main
