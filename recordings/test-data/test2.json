@@ -1,0 +1,51 @@
+{
+    "title": "test2",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 632,
+            "height": 1508,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.aftonbladet.se/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.aftonbladet.se/",
+                    "title": "Nyheter från Sveriges största nyhetssajt"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Godkänn alla cookies"
+                ],
+                [
+                    "button.sp_choice_type_11"
+                ],
+                [
+                    "xpath///*[@id=\"notice\"]/div[3]/button[2]"
+                ],
+                [
+                    "pierce/button.sp_choice_type_11"
+                ],
+                [
+                    "text/Godkänn alla"
+                ]
+            ],
+            "offsetY": 24.9453125,
+            "offsetX": 61.9453125,
+            "frame": [
+                1
+            ]
+        }
+    ]
+}

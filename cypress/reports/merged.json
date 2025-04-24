@@ -1,0 +1,395 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-04-24T18:21:09.753Z",
+    "end": "2025-04-24T18:42:36.734Z",
+    "duration": 1286981
+  },
+  "results": [
+    {
+      "uuid": "26ef19d4-2dfe-4b01-aa8d-3d9e2c346bde",
+      "title": "",
+      "fullFile": "cypress/e2e/test1.cy.js",
+      "file": "cypress/e2e/test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b22fa7a9-f15d-4844-9d8d-ba19d5cd2241",
+          "title": "test1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test1 ska återskapa inspelat flöde",
+              "timedOut": null,
+              "duration": 692,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(946, 1508);\ncy.visit('https://www.expressen.se/');",
+              "err": {},
+              "uuid": "a8224879-d177-481b-949e-68649108f655",
+              "parentUUID": "b22fa7a9-f15d-4844-9d8d-ba19d5cd2241",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a8224879-d177-481b-949e-68649108f655"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 692,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2a04a255-322b-4062-9799-4348ed901a55",
+      "title": "",
+      "fullFile": "cypress/e2e/test2.cy.js",
+      "file": "cypress/e2e/test2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "75ad42d0-cb95-4910-9b8b-3abf1e3ce38d",
+          "title": "test2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test2 ska återskapa inspelat flöde",
+              "timedOut": null,
+              "duration": 4008,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(632, 1508);\ncy.visit('https://www.aftonbladet.se/');",
+              "err": {},
+              "uuid": "d192443b-d60b-4982-8765-00a254693a01",
+              "parentUUID": "75ad42d0-cb95-4910-9b8b-3abf1e3ce38d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d192443b-d60b-4982-8765-00a254693a01"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4008,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "d932150e-87da-4771-ae3c-df0457a5eaef",
+      "title": "",
+      "fullFile": "cypress/e2e/test1.cy.js",
+      "file": "cypress/e2e/test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6dfe056-46f3-4343-bc48-5c53be4c26eb",
+          "title": "test1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test1 ska återskapa inspelat flöde",
+              "timedOut": null,
+              "duration": 888,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(946, 1508);\ncy.visit('https://www.expressen.se/');",
+              "err": {},
+              "uuid": "82f62c92-b54f-421b-bd05-fcca7e4a1e7d",
+              "parentUUID": "e6dfe056-46f3-4343-bc48-5c53be4c26eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82f62c92-b54f-421b-bd05-fcca7e4a1e7d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 888,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "21b8d270-0fed-4083-9037-270d0375eac4",
+      "title": "",
+      "fullFile": "cypress/e2e/test2.cy.js",
+      "file": "cypress/e2e/test2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bef5e063-a8ba-4ce7-94d7-95f593cbdf5c",
+          "title": "test2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test2 ska återskapa inspelat flöde",
+              "timedOut": null,
+              "duration": 1610,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(632, 1508);\ncy.visit('https://www.aftonbladet.se/');",
+              "err": {},
+              "uuid": "1a2e4e30-e6a5-4e91-9402-9b6a2ec0ba36",
+              "parentUUID": "bef5e063-a8ba-4ce7-94d7-95f593cbdf5c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1a2e4e30-e6a5-4e91-9402-9b6a2ec0ba36"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1610,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "15e6879c-2310-43c4-869a-ec3a01fdfa66",
+      "title": "",
+      "fullFile": "cypress/e2e/test1.cy.js",
+      "file": "cypress/e2e/test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "61e504cd-2a64-4733-87f1-e820d296c055",
+          "title": "test1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test1 ska återskapa inspelat flöde",
+              "timedOut": null,
+              "duration": 749,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(946, 1508);\ncy.visit('https://www.expressen.se/');",
+              "err": {},
+              "uuid": "20ef79ca-d7a6-4529-92ec-cd309ffdde05",
+              "parentUUID": "61e504cd-2a64-4733-87f1-e820d296c055",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "20ef79ca-d7a6-4529-92ec-cd309ffdde05"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 749,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "d8e63fa8-8462-41c4-8023-d2e4b4e0ab2b",
+      "title": "",
+      "fullFile": "cypress/e2e/test2.cy.js",
+      "file": "cypress/e2e/test2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7fae9aa7-c827-4ad8-a1b3-dd52d527eb1e",
+          "title": "test2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test2 ska återskapa inspelat flöde",
+              "timedOut": null,
+              "duration": 3323,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(632, 1508);\ncy.visit('https://www.aftonbladet.se/');",
+              "err": {},
+              "uuid": "0314500d-ae95-4524-a69a-84f6387ca220",
+              "parentUUID": "7fae9aa7-c827-4ad8-a1b3-dd52d527eb1e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0314500d-ae95-4524-a69a-84f6387ca220"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3323,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

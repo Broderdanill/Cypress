@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-24T18:27:06.562Z",
+    "end": "2025-04-24T18:27:08.627Z",
+    "duration": 2065,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d932150e-87da-4771-ae3c-df0457a5eaef",
+      "title": "",
+      "fullFile": "cypress/e2e/test1.cy.js",
+      "file": "cypress/e2e/test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6dfe056-46f3-4343-bc48-5c53be4c26eb",
+          "title": "test1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test1 ska återskapa inspelat flöde",
+              "timedOut": null,
+              "duration": 888,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(946, 1508);\ncy.visit('https://www.expressen.se/');",
+              "err": {},
+              "uuid": "82f62c92-b54f-421b-bd05-fcca7e4a1e7d",
+              "parentUUID": "e6dfe056-46f3-4343-bc48-5c53be4c26eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82f62c92-b54f-421b-bd05-fcca7e4a1e7d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 888,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-02-09T13:07:00.417Z",
-    "end": "2025-02-09T13:07:02.016Z",
-    "duration": 1599,
+    "start": "2025-04-24T18:42:29.346Z",
+    "end": "2025-04-24T18:42:31.233Z",
+    "duration": 1887,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,49 +18,49 @@
   },
   "results": [
     {
-      "uuid": "d53d8440-0951-4b02-ab4e-42ebdc9708d1",
+      "uuid": "15e6879c-2310-43c4-869a-ec3a01fdfa66",
       "title": "",
-      "fullFile": "cypress/e2e/mitt-testfall.cy.js",
-      "file": "cypress/e2e/mitt-testfall.cy.js",
+      "fullFile": "cypress/e2e/test1.cy.js",
+      "file": "cypress/e2e/test1.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "e07fb630-8b25-454b-8e6f-714a9b62d542",
-          "title": "template spec",
+          "uuid": "61e504cd-2a64-4733-87f1-e820d296c055",
+          "title": "test1",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "passes",
-              "fullTitle": "template spec passes",
+              "title": "ska återskapa inspelat flöde",
+              "fullTitle": "test1 ska återskapa inspelat flöde",
               "timedOut": null,
-              "duration": 504,
+              "duration": 749,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit('https://example.cypress.io');",
+              "code": "cy.viewport(946, 1508);\ncy.visit('https://www.expressen.se/');",
               "err": {},
-              "uuid": "12e7f206-e77e-44e6-b0f3-2adbc27ad648",
-              "parentUUID": "e07fb630-8b25-454b-8e6f-714a9b62d542",
+              "uuid": "20ef79ca-d7a6-4529-92ec-cd309ffdde05",
+              "parentUUID": "61e504cd-2a64-4733-87f1-e820d296c055",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "12e7f206-e77e-44e6-b0f3-2adbc27ad648"
+            "20ef79ca-d7a6-4529-92ec-cd309ffdde05"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 504,
+          "duration": 749,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -78,13 +78,13 @@
   ],
   "meta": {
     "mocha": {
-      "version": "7.0.1"
+      "version": "7.2.0"
     },
     "mochawesome": {
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": true,
+        "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -94,9 +94,9 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results",
+        "reportDir": "cypress/reports",
         "overwrite": false,
-        "html": true,
+        "html": false,
         "json": true
       },
       "version": "6.2.0"

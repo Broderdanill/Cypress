@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cypress Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>📊 Cypress Testrapporter</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Testfall</th>
+        <th>Resultat</th>
+        <th>Senast körd</th>
+        <th>Senast lyckad</th>
+      </tr>
+    </thead>
+    <tbody id="report-body"></tbody>
+  </table>
+
+  <script>
+    function formatDate(ts) {
+      const d = new Date(ts);
+      const pad = n => String(n).padStart(2, '0');
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    }
+
+    fetch('merged.json')
+      .then(res => res.json())
+      .then(data => {
+        const grouped = {};
+        const resultRunTime = data.stats?.end
+          ? new Date(data.stats.end).getTime()
+          : Date.now();
+
+        data.results.forEach(result => {
+          result.suites?.forEach(suite => {
+            suite.tests?.forEach(test => {
+              const title = test.fullTitle;
+              if (!grouped[title]) grouped[title] = [];
+              grouped[title].push({ ...test, runTime: resultRunTime });
+            });
+          });
+        });
+
+        const tbody = document.getElementById('report-body');
+        Object.entries(grouped).forEach(([title, tests], index) => {
+          const row = document.createElement('tr');
+          const tdName = document.createElement('td');
+          const tdChart = document.createElement('td');
+          const tdLastRun = document.createElement('td');
+          const tdLastSuccess = document.createElement('td');
+
+          const link = document.createElement('a');
+          link.href = `details.html?test=${encodeURIComponent(title)}`;
+          link.textContent = title;
+          tdName.appendChild(link);
+
+          const canvas = document.createElement('canvas');
+          canvas.className = 'chart';
+          canvas.id = `chart-${index}`;
+          tdChart.appendChild(canvas);
+
+          const passed = tests.filter(t => t.pass).length;
+          const failed = tests.length - passed;
+
+          const lastRun = tests.length
+            ? tests.reduce((a, b) => a.runTime > b.runTime ? a : b).runTime
+            : '-';
+
+          const passedTests = tests.filter(t => t.pass);
+          const lastSuccessTest = passedTests.length
+            ? passedTests.reduce((a, b) => a.runTime > b.runTime ? a : b)
+            : null;
+
+          tdLastRun.textContent = lastRun !== '-' ? formatDate(lastRun) : '-';
+          tdLastSuccess.textContent = lastSuccessTest ? formatDate(lastSuccessTest.runTime) : '-';
+
+          row.appendChild(tdName);
+          row.appendChild(tdChart);
+          row.appendChild(tdLastRun);
+          row.appendChild(tdLastSuccess);
+          tbody.appendChild(row);
+
+          new Chart(canvas, {
+            type: 'pie',
+            data: {
+              labels: ['✔️ Lyckade', '❌ Misslyckade'],
+              datasets: [{
+                data: [passed, failed],
+                backgroundColor: ['#2ecc71', '#e74c3c']
+              }]
+            },
+            options: {
+              responsive: false,
+              plugins: { legend: { display: false } }
+            }
+          });
+        });
+      })
+      .catch(err => {
+        document.body.innerHTML += `<p style="color:red;">Fel vid laddning av merged.json: ${err.message}</p>`;
+      });
+  </script>
+</body>
+</html>

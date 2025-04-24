@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Detaljer för testfall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="title">Testdetaljer</h1>
+  <input type="text" id="filter" placeholder="🔍 Filtrera på status, datum eller titel...">
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Titel</th>
+        <th>Datum/Tid</th>
+      </tr>
+    </thead>
+    <tbody id="runs"></tbody>
+  </table>
+  <a href="dashboard.html">⬅ Tillbaka</a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const testTitle = params.get('test');
+
+    function formatDate(ts) {
+      const d = new Date(ts);
+      const pad = n => String(n).padStart(2, '0');
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    }
+
+    let allRuns = [];
+
+    if (!testTitle) {
+      document.getElementById('title').textContent = '❗️ Inget test angett.';
+    } else {
+      document.getElementById('title').textContent = `Detaljer för: ${testTitle}`;
+      fetch('merged.json')
+        .then(res => res.json())
+        .then(data => {
+          const runs = [];
+          const resultRunTime = data.stats?.end
+            ? new Date(data.stats.end).getTime()
+            : Date.now();
+
+          data.results.forEach(result => {
+            result.suites?.forEach(suite => {
+              suite.tests?.forEach(test => {
+                if (test.fullTitle === testTitle) {
+                  runs.push({ ...test, runTime: resultRunTime });
+                }
+              });
+            });
+          });
+
+          allRuns = runs.sort((a, b) => b.runTime - a.runTime);
+          renderTable(allRuns);
+        })
+        .catch(err => {
+          document.getElementById('runs').innerHTML = `<p style="color:red;">Fel: ${err.message}</p>`;
+        });
+    }
+
+    function renderTable(runs) {
+      const tbody = document.getElementById('runs');
+      tbody.innerHTML = '';
+
+      runs.forEach(t => {
+        const row = document.createElement('tr');
+
+        const tdStatus = document.createElement('td');
+        tdStatus.textContent = t.pass ? '✔️ Lyckades' : '❌ Misslyckades';
+        tdStatus.className = t.pass ? 'pass' : 'fail';
+
+        const tdTitle = document.createElement('td');
+        tdTitle.textContent = t.fullTitle;
+
+        const tdTime = document.createElement('td');
+        tdTime.textContent = formatDate(t.runTime);
+
+        row.appendChild(tdStatus);
+        row.appendChild(tdTitle);
+        row.appendChild(tdTime);
+        tbody.appendChild(row);
+      });
+    }
+
+    document.getElementById('filter').addEventListener('input', function () {
+      const val = this.value.toLowerCase();
+      const filtered = allRuns.filter(t => {
+        return (
+          t.fullTitle.toLowerCase().includes(val) ||
+          formatDate(t.runTime).toLowerCase().includes(val) ||
+          (t.pass ? 'lyckades' : 'misslyckades').includes(val)
+        );
+      });
+      renderTable(filtered);
+    });
+  </script>
+</body>
+</html>

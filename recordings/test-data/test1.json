@@ -1,0 +1,25 @@
+{
+    "title": "test1",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 946,
+            "height": 1508,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.expressen.se/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.expressen.se/",
+                    "title": ""
+                }
+            ]
+        }
+    ]
+}
