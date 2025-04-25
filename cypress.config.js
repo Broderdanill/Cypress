@@ -3,7 +3,7 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // ingenting nödvändigt här just nu
+      return config;
     },
     reporter: 'mochawesome',
     reporterOptions: {
@@ -12,6 +12,6 @@ module.exports = defineConfig({
       html: false,
       json: true
     },
-    video: false,
-  },
+    video: false
+  }
 });

@@ -5,18 +5,8 @@ npx cypress open
 # Run a specific test case
 npx cypress run --spec "cypress/e2e/test1.cy.js"
 
-# Visuellt HTML för att se hur tester gått
-npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+# Install support for mssql-db
+npm install cypress mssql
 
-# Generera HTML-rapport
-npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged.json
-npx marge cypress/reports/merged.json --reportDir cypress/reports/html
-
-# Dashboard
-npm install chart.js
-# För att kunna se dashboard.html behövs webbserver
-npx http-server cypress/reports
-
-
-# Kör report
-npm run report
+# Run Test and send to DB
+DB_USER=sa DB_PASS='YourStrong!Passw0rd' DB_SERVER=localhost DB_PORT=1433 DB_NAME=master DB_TABLE=TestResultsFull npm run test:db
