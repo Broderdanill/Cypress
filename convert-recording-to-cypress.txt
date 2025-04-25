@@ -1,5 +1,0 @@
-1. Create recording using Chrome
-2. Save recording as json file
-3. Copy the json file to folder ../recordings/
-4. Run script 
-    node convert-all-recordings.js
