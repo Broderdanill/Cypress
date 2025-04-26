@@ -18,6 +18,7 @@
     "mochawesome-merge": "^4.2.0"
   },
   "dependencies": {
+    "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "mssql": "^11.0.1"
   }
