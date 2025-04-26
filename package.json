@@ -7,7 +7,8 @@
     "test": "npx cypress run",
     "merge": "node scripts/merge-reports.js",
     "post": "node scripts/post-results.js",
-    "test:db": "npm run test && npm run merge && npm run post"
+    "test:db": "npm run test && npm run merge && npm run post",
+    "fetch:recordings": "node scripts/fetch-recordings.js"
   },
   "keywords": [],
   "author": "",
